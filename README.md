@@ -41,7 +41,7 @@ If this was a mouthful of information, don't worry! You can always refer back to
 
 One of the important objects in the `process` object is `env`. It stands for environment variables or env vars for short. It's important, because we can pass certain information to our Node process(es) via env vars. Typically information like paths, modes (development or production) or configurations. Also, it's the way to pass sensitive information which we don't want to store in our source code such as usernames/passwords, API keys or information that is specific to that environment.
 
-To access env vars, simply use `process.env.NAME` where `NAME` is capitalized name of the environment variable. For example, `process.env.HOME` will give you a home path if it's set. 
+To access env vars, simply use `process.env.NAME` where `NAME` is a capitalized name of the environment variable. For example, `process.env.HOME` will give you a home path if it's set. 
 
 You can set env var in your bash/zsh profile on Macs and Linux, or in Control Panel on Windows. For example, this will append to `PATH` a Rube env var, you can add this line to your bash profile:
 
@@ -59,7 +59,8 @@ The command will output `production` and terminate. You can run a script instead
 
 ## Standard Input and Output
 
-So how does our Node process communicates with the outside world besides the environment variables? Can we pass some data and get the Node script to output the results that we need? 
+So how does our Node process communicate with the outside world besides the environment variables? Can we pass some data and get the Node script to output the results that we need? 
+
 Standard input `process.stdin` and output `process.stdout` are the answer. They are streams. 
 
 We'll talk about streams and the input (which is a readable stream) later. For now consider an example in which we output a string:
@@ -68,8 +69,7 @@ We'll talk about streams and the input (which is a readable stream) later. For n
 process.stdout.write('React Quickly \n')
 ```
 
-The result printing of the string and it is analogous to `console.log()`.
-
+Using `process.stdout.write` is the exact same thing as `console.log`.
 
 ## Resources
 
