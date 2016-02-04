@@ -35,7 +35,7 @@ It also has methods to terminate the process:
 * `process.exit(0)`: Exit the current process with no errors
 * `process.kill(pid)`: Terminate a process with ID `pid`, e.g., to kill self is `process.kill(process.pid)`
 
-If this was a mouthful of information, refrain from worrying. Instead use this page when you need it and know that the system information can be found in `process`.
+If this was a mouthful of information, don't worry! You can always refer back to this lesson. 
 
 ## Environment Variables
 
