@@ -7,10 +7,10 @@ This lesson will cover the `process` global object in Node to get system informa
 ## Objectives
 
 1. Describe the process objects
-1. Describe about process information such as versions, pid, cwd, features, uptime, memoryUsage
-1. Describe how to exit the process
-1. Describe environment variables
-2. Describe standard input and output
+2. Describe about process information such as versions, pid, cwd, features, uptime, memoryUsage
+3. Describe how to exit the process
+4. Describe environment variables
+5. Describe standard input and output
 
 ## Process Interface
 
@@ -39,7 +39,7 @@ If this was a mouthful of information, don't worry! You can always refer back to
 
 ## Environment Variables
 
-One of the important objects in the `process` object is `env`. It stands for environment variables or env vars for short. It's important, because we can pass certain information to our Node process(es) via env vars. Typically information like paths, modes (development or production) or configurations. Also, it's the way to pass sensitive information which we don't want to store in our source code such as usernames/passwords or API keys or which is specific to that environment meaning on development servers we have one set of API keys and on the production server another.
+One of the important objects in the `process` object is `env`. It stands for environment variables or env vars for short. It's important, because we can pass certain information to our Node process(es) via env vars. Typically information like paths, modes (development or production) or configurations. Also, it's the way to pass sensitive information which we don't want to store in our source code such as usernames/passwords, API keys or information that is specific to that environment.
 
 To access env vars, simply use `process.env.NAME` where `NAME` is capitalized name of the environment variable. For example, `process.env.HOME` will give you a home path if it's set. 
 
