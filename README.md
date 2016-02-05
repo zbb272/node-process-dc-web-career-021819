@@ -43,7 +43,7 @@ One of the important objects in the `process` object is `env`. It stands for env
 
 To access env vars, simply use `process.env.NAME` where `NAME` is a capitalized name of the environment variable. For example, `process.env.HOME` will give you a home path if it's set. 
 
-You can set env var in your bash/zsh profile on Macs and Linux, or in Control Panel on Windows. For example, this will append to `PATH` a Rube env var, you can add this line to your bash profile:
+You can set env var in your bash/zsh profile on Macs and Linux, or in Control Panel on Windows. For example, this will append to `PATH` a Ruby env var, you can add this line to your bash profile:
 
 ```
 export PATH="/usr/local/var/rbenv/shims:${PATH}"
