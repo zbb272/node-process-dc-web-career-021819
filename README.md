@@ -17,7 +17,7 @@ This lesson will cover the `process` global object in Node to get system informa
 `process` has a lengthy number of properties related to the currently running Node instance and the environment. 
 
 * `process.env`: Environment variables
-* `process.pid`: Process ID 
+* `process.pid`: Process ID, i.e., ID of the current process
 * `process.platform`: Platform, e.g., `darwin`
 * `process.cwd()`: Current working directory. Not always the same as `__dirname`.
 * `process.version`: Version of node
@@ -33,7 +33,9 @@ It also has methods to terminate the process:
 
 * `process.exit(1)`: Exit the current process with errors
 * `process.exit(0)`: Exit the current process with no errors
-* `process.kill(pid)`: Terminate a process with ID `pid`, e.g., to kill self is `process.kill(process.pid)`
+* `process.kill(pid)`: Terminate a process by its ID `pid`, e.g., to kill self is `process.kill(process.pid)`
+
+Note: the difference between `exit()` and `kill()` is that with the latter you can terminate any process and with the former only the current process.
 
 If this was a mouthful of information, don't worry! You can always refer back to this lesson. 
 
@@ -69,7 +71,32 @@ We'll talk about streams and the input (which is a readable stream) later. For n
 process.stdout.write('React Quickly \n')
 ```
 
-Using `process.stdout.write` is the exact same thing as `console.log`.
+You might have guessed that using `process.stdout.write` is the exact same thing as `console.log`. In other words, `stdout` is the output of the Node program. But what about the input? How can you create a code generator which asks you some questions (what template engine to use?) to generate the boilerplate code? Or another command line tool?
+
+We can use `stdin` which is an input to Node programs. Using it involve setting up event listeners `readable`:
+
+```js
+process.stdin.setEncoding('utf8')
+
+process.stdin.on('readable', function() {
+  var chunk = process.stdin.read()
+  if (chunk !== null) {
+    process.stdout.write(`data: ${chunk}`)
+  }
+})
+```
+
+And another event listener `end`:
+
+```js
+process.stdin.on('end', function () {
+  process.stdout.write('end')
+})
+```
+
+The code for the `stdin` example is in the `stdin.js` file. When we run it, we can keep entering symbols in the terminal. Each time we press enter, the Node script will prefix the intupt with `data` and output it in the terminal:
+
+![](stdin.png)
 
 ## Resources
 
