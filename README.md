@@ -2,7 +2,13 @@
 
 ## Overview
 
-This lesson will cover the `process` global object in Node to get system information and manipulate with the Node instance. 
+By now you know that Node is different from browser JavaScript. Node's the server-side language after all. We can do all kinds of cool stuff on the server-side which is not allowed on the browser. For many reasons including security, browsers limit the access to the system information. 
+
+What if you want to pass some passwords to your app which is an open-source (code is available to anyone) project? You cannot store passwords on GitHub. Duh! :-)
+
+How about getting the system path of the current process to navigate to a particular folder? Or maybe your servers are overheating due to bug (memory leaks are bad!), and you must get the stats before your server crashes leading to a frustrated boss and getting your fired from a job?
+
+This lesson will cover the `process` global object in Node to get system information and manipulate with the Node instance. Also, you can check memory, access passwords from environment variables, get current path and do many more things (exit the process, get versions and the type of the architecture of OS) by working with the `process` global object. 
 
 ## Objectives
 
