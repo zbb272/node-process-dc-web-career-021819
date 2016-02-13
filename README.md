@@ -73,7 +73,7 @@ process.stdout.write('React Quickly \n')
 
 You might have guessed that using `process.stdout.write` is the exact same thing as `console.log`. In other words, `stdout` is the output of the Node program. But what about the input? How can you create a code generator which asks you some questions (what template engine to use?) to generate the boilerplate code? Or another command line tool?
 
-We can use `stdin` which is an input to Node programs. Using it involve setting up event listeners `readable`:
+We can use `stdin` which is an input to Node programs. Using it involve setting up event listeners `readable`. (The code for the `stdin` example is in the `stdin.js` file.)
 
 ```js
 process.stdin.setEncoding('utf8')
@@ -86,7 +86,7 @@ process.stdin.on('readable', function() {
 })
 ```
 
-And another event listener `end`:
+So basically we are telling Node to wait for the event `readable` (`stdin` is something called readable stream). When this event happens, we read a chunk of data with the `read()` function. We echo the input back prefixing it with `data`. We also need another event listener `end`:
 
 ```js
 process.stdin.on('end', function () {
@@ -94,7 +94,11 @@ process.stdin.on('end', function () {
 })
 ```
 
-The code for the `stdin` example is in the `stdin.js` file. When we run it, we can keep entering symbols in the terminal. Each time we press enter, the Node script will prefix the intupt with `data` and output it in the terminal:
+This second event listener will fire on the pressing of the enter button. It will output the input back to the terminal. 
+
+Type the code into the file `stdin.js` and launch it with `$ node stdin.js`. Observe what will happen.
+
+When we run it, we can keep entering symbols in the terminal. Each time we press enter, the Node script will prefix the intupt with `data` and output it in the terminal:
 
 ![](stdin.png)
 
