@@ -69,7 +69,7 @@ The command will output `production` and terminate. You can run a script instead
 
 So how does our Node process communicate with the outside world besides the environment variables? Can we pass some data and get the Node script to output the results that we need?
 
-Standard input `process.stdin` and output `process.stdout` are the answer. They are streams. Streams are this cool abstractions which allow us to process information (read or write) in chunks, i.e., without waiting for the whole information to finish loading. They are useful when there is no end (continuous operations) or when dealing with large data (e.g., videos, archives, images, huge datasets). 
+Standard input `process.stdin` and output `process.stdout` are the answer. They are streams. A stream are this cool abstraction which allows us to process information (read or write) in chunks, i.e., without waiting for the whole information to finish loading. They are useful when there is no end (continuous operations) or when dealing with large data (e.g., videos, archives, images, huge datasets). 
 
 Streams are a powerful concept and they are used a lot in Node, but it's not vital to fully understand them before starting using them. So don't worry. Right now, we want you to know that input and output are streams, what streams are and how to use them for `stdin` and `stdout`. We'll show you the input (`stdin`), which is a readable stream, later. For now let's focus on the output (`stdout`) which is a writable stream. Consider an example in which we output a string:
 
