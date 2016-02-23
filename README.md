@@ -57,7 +57,7 @@ You can set env var in your bash/zsh profile on Macs and Linux, or in Control Pa
 export PATH="/usr/local/var/rbenv/shims:${PATH}"
 ```
 
-Another and probably easier way is to prefix your `$ node program.js` command with the variables (or write a shell script with them). For example, we can use `-e` flag to output the `NODE_ENV` variable commonly used to set environment such as development, testing, and production:
+Another and probably easier way is to prefix your `node program.js` command with the variables (or write a shell script with them). For example, we can use `-e` flag to output the `NODE_ENV` variable commonly used to set environment such as development, testing, and production:
 
 ```
 NODE_ENV=production node -e "console.log(process.env.NODE_ENV)"
