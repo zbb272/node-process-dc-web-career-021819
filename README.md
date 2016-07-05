@@ -2,19 +2,19 @@
 
 ## Overview
 
-By now you know that Node is different from browser JavaScript. Node's the server-side language after all. We can do all kinds of cool stuff on the server-side which is not allowed on the browser. For many reasons including security, browsers limit the access to the system information.
+By now you know that Node is different from browser JavaScript. It is the server-side language after all. We can do all kinds of cool stuff on the server-side which is not allowed on the browser. For many reasons including security, browsers limit the access to the system information.
 
-What if you want to pass some passwords to your app which is an open-source project? You cannot store passwords on GitHub. Duh! :-)
+What if you want to pass some passwords to your app which is an open-source project? Obviously, storing passwords on Github isn't an option.
 
-How about getting the system path of the current process to navigate to a particular folder? Or maybe your servers are overheating due to a bug (memory leaks are bad!), and you must get the stats before your server crashes leading to a frustrated boss and getting your fired from a job?
+How about getting the system path of the current process to navigate to a particular folder? Or maybe your servers are overheating due to a bug (memory leaks are bad!), and you must get the stats before your server crashes.
 
-This lesson will cover the `process` global object in Node to get system information and manipulate the Node instance. Also, you can check memory, access passwords from environment variables, get current path and do many more things (exit the process, get versions and the type of the architecture of OS) by working with the `process` global object.
+This lesson will cover the `process` global object in Node to get system information and manipulate the Node instance. Also, you can check memory, access passwords from environment variables, get the current path and do many more things (exit the process, get versions and the type of the architecture of OS) by working with the `process` global object.
 
 ## Objectives
 
 1. Describe the process objects
-2. Describe about process information such as `versions`, `pid`, `cwd`, `features`, `uptime`, `memoryUsage`
-3. Describe how to exit the process
+2. Explain process information such as `versions`, `pid`, `cwd`, `features`, `uptime`, `memoryUsage`
+3. Exit the process
 4. Describe environment variables
 5. Describe standard input and output
 
@@ -71,7 +71,7 @@ So how does our Node process communicate with the outside world besides the envi
 
 Standard input `process.stdin` and output `process.stdout` are the answer. They are streams. A stream is this cool abstraction which allows us to process information (read or write) in chunks, i.e., without waiting for the whole information to finish loading. They are useful when there is no end (continuous operations) or when dealing with large data (e.g., videos, archives, images, huge datasets). 
 
-Streams are a powerful concept and they are used a lot in Node, but it's not vital to fully understand them before starting using them. So don't worry. Right now, we want you to know that input and output are streams, what streams are and how to use them for `stdin` and `stdout`. We'll show you the input (`stdin`), which is a readable stream, later. For now let's focus on the output (`stdout`) which is a writable stream. Consider an example in which we output a string:
+Streams are a powerful concept and they are used a lot in Node, but it's not vital to fully understand them before you start using them. So don't worry. Right now, we want you to know that input and output are streams, what streams are and how to use them for `stdin` and `stdout`. We'll show you the input (`stdin`), which is a readable stream, later. For now let's focus on the output (`stdout`) which is a writable stream. Consider an example in which we output a string:
 
 ```js
 process.stdout.write('Practical Node.js \n')
@@ -79,7 +79,7 @@ process.stdout.write('Practical Node.js \n')
 
 You might have guessed that using `process.stdout.write` is the exact same thing as `console.log`. In other words, `stdout` is the output of the Node program. But what about the input? How can you create a code generator which asks you some questions (what template engine to use?) to generate the boilerplate code? Or another command line tool?
 
-We can use `stdin` which is an input to Node programs. Using it involve setting up event listeners `readable`. (The code for the `stdin` example is in the `stdin.js` file.)
+We can use `stdin` which is an input to Node programs. Using it involves setting up event listeners `readable`. (The code for the `stdin` example is in the `stdin.js` file.)
 
 ```js
 process.stdin.setEncoding('utf8')
