@@ -104,7 +104,7 @@ This second event listener will fire on the pressing of the enter button. It wil
 
 Launch `node stdin.js` and watch what happens. When we run it, we can keep entering symbols in the terminal. Each time we press enter, the Node script will prefix the intupt with `data` and output it in the terminal:
 
-![](stdin.png)
+![Image](https://s3.amazonaws.com/learn-verified/node-process-azat.png)
 
 ## Resources
 
